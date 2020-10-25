@@ -12,9 +12,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    src: url('./Kumbh_Sans/KumbhSans-Regular.ttf');
+    font-family: 'KumbhSans';
+}
+
+@font-face {
+    src: url('./Kumbh_Sans/KumbhSans-Bold.ttf');
+    font-family: 'KumbhSansBold';
+}
+
 body {
     font-size: 12px;
-    font-family: 'Kumbh Sans';
+    font-family: 'KumbhSans';
     color: var(--darkBlue);
 }
 
@@ -115,7 +125,7 @@ input {
 }
 
 input:checked + .accordion-btn {
-    font-weight: bold;
+    font-family: 'KumbhSansBold';
 }
 
 input:checked + .accordion-btn::after {
