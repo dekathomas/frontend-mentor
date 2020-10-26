@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Frontend Mentor | Article preview component</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="card">
+				<div class="card-image"></div>
+				<div class="card-desc">
+					<h1 class="card-title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+					<p class="card-text">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+					<div class="card-footer">
+						<div class="footer-left">
+							<img src="./images/avatar-michelle.jpg" alt="person image">
+							<div class="person-profile">
+								<p class="person-name">Michelle Appleton</p>
+								<p class="date">28 June 2020</p>
+							</div>
+						</div>
+						<div class="footer-right">
+							<span class="fas fa-share share-icon"></span>
+						</div>
+					</div>
+					<div class="share-card">
+						<p>Share</p>
+						<span class="fab fa-facebook"></span>
+						<span class="fab fa-twitter"></span>
+						<span class="fab fa-pinterest"></span>
+						<span class="fas fa-share share-icon-hover"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const shareBtn = document.querySelector('.share-icon')
+			const shareCard = document.querySelector('.share-card')
+			const shareHoverBtn = document.querySelector('.share-icon-hover')
+
+			shareBtn.addEventListener('click', function() {
+				if (!shareBtn.classList.contains('active')) {
+					shareBtn.classList.add('active')
+					shareCard.style.display = "block"
+				} else {
+					shareBtn.classList.remove('active')
+					shareCard.style.display = "none"
+				}
+			})
+
+			shareHoverBtn.addEventListener('click', function() {
+				shareBtn.classList.remove('active')
+				shareCard.style.display = "none"
+			})
+		</script>
+	</body>
+</html>
