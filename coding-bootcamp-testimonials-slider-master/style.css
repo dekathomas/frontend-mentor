@@ -1,0 +1,207 @@
+:root {
+    --darkBlue: hsl(240, 38%, 20%);
+    --grayBlue: hsl(240, 18%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@font-face {
+    src: url('./Inter/Inter-Light-slnt=0.ttf');
+    font-family: 'Inter300';
+}
+
+@font-face {
+    src: url('./Inter/Inter-Medium-slnt=0.ttf');
+    font-family: 'Inter500';
+}
+
+@font-face {
+    src: url('./Inter/Inter-Bold-slnt=0.ttf');
+    font-family: 'Inter700';
+}
+
+body {
+    font-size: 3.2rem;
+    font-family: 'Inter300';
+    color: var(--darkBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 1080px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sliders {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    transition: all .3s linear;
+    left: 0;
+}
+
+.slider {
+    min-width: 100%;
+    height: 100%;
+    transition: all .3s linear;
+    position: relative;
+    flex: 1;
+    left: 0;
+    margin-right: 15rem;
+}
+
+.description,
+.image {
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.description {
+    width: 70%;
+    z-index: 1;
+    left: 0;
+}
+
+.image {
+    height: 45rem;
+    width: 45rem;
+    right: 0;
+}
+
+.background-image {
+    position: absolute;
+    right: -7%;
+    top: -7%;
+    z-index: -1;
+    width: 55%;
+}
+
+.background-quotes {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    font-family: 'Inter700';
+}
+
+.position {
+    color: var(--grayBlue);
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0%;
+    right: 30%;
+}
+
+.prev-btn,
+.next-btn {
+    padding: 1rem 2rem;
+    background-color: #FFF;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--grayBlue);
+}
+
+.prev-btn {
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+}
+
+.next-btn {
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+}
+
+.profile-image {
+    height: 100%;
+    width: 100%;
+    box-shadow: 1rem 3rem 2rem -1rem rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        min-width: 80%;
+    }
+
+    .slider {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        grid-gap: 8rem;
+        margin-right: 0;
+    }
+
+    .description,
+    .image {
+        position: relative;
+    }
+
+    .description {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        font-size: 1.8rem;
+    }
+
+    .profile-name {
+        font-size: 1.8rem;
+    }
+
+    .profile-name span {
+        display: block;
+        text-align: center;
+    }
+
+    .image {
+        width: 25rem;
+        height: 25rem;
+    }
+    
+    .background-quotes {
+        top: 60%;
+        width: 6rem;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .background-image {
+        right: 27vw;
+        width: 33rem;
+    }
+
+    .buttons {
+        bottom: 46%;
+        right: 43%;
+    }
+
+    .prev-btn,
+    .next-btn {
+        padding: .5rem 1.8rem;
+    }
+}
